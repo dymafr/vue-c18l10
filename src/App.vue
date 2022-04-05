@@ -5,7 +5,11 @@
     <router-link class="mr-10" to="/b"> Page B</router-link>
   </nav>
   <div class="d-flex flex-row">
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <Transition name="fade">
+        <Component :is="Component" />
+      </Transition>
+    </router-view>
   </div>
 </template>
 
