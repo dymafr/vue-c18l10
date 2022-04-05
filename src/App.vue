@@ -5,8 +5,8 @@
     <router-link class="mr-10" to="/b"> Page B</router-link>
   </nav>
   <div class="d-flex flex-row justify-content-center">
-    <router-view v-slot="{ Component }">
-      <Transition mode="out-in">
+    <router-view v-slot="{ Component, route }">
+      <Transition :name="route.meta.animation" mode="out-in">
         <Component :is="Component" />
       </Transition>
     </router-view>
@@ -25,15 +25,15 @@ nav {
   }
 }
 
-.v-enter-from {
+.fade-enter-from {
   transform: scale(0) rotate(-360deg);
 }
 
-.v-enter-active {
+.fade-enter-active {
   transition: all 1s;
 }
 
-.v-leave-to {
+.fade-leave-to {
   transform: scale(2) rotate(360deg);
   opacity: 0;
 }

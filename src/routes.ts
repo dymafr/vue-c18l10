@@ -14,5 +14,8 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/b',
     component: PageB,
+    meta: {
+      animation: 'fade',
+    },
   },
 ];
