@@ -1,14 +1,5 @@
 <template>
-  <div
-    class="
-      card
-      p-20
-      d-flex
-      flex-column
-      justify-content-center
-      align-items-center
-    "
-  >
+  <div class="card p-20 d-flex justify-content-center align-items-center">
     <h1>La page B</h1>
   </div>
 </template>
@@ -17,7 +8,7 @@
 
 <style scoped lang="scss">
 .card {
-  width: 100%;
+  width: 400px;
   height: 300px;
 }
 </style>

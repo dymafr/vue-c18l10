@@ -4,9 +4,9 @@
     <router-link to="/a" class="mr-10"> Page A</router-link>
     <router-link class="mr-10" to="/b"> Page B</router-link>
   </nav>
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row justify-content-center">
     <router-view v-slot="{ Component }">
-      <Transition name="fade">
+      <Transition mode="out-in">
         <Component :is="Component" />
       </Transition>
     </router-view>
@@ -23,5 +23,18 @@ nav {
   a {
     color: white;
   }
+}
+
+.v-enter-from {
+  transform: scale(0) rotate(-360deg);
+}
+
+.v-enter-active {
+  transition: all 1s;
+}
+
+.v-leave-to {
+  transform: scale(2) rotate(360deg);
+  opacity: 0;
 }
 </style>
